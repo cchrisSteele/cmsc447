@@ -9,6 +9,11 @@ load_dotenv()
 DATABASE_URL = os.getenv("DB_URL")
 AUTH_TOKEN = os.getenv("DB_TOKEN")
 
+# Map each table to its primary key column
+TABLE_ID_COLUMNS = {
+    "admins": "admin_id",
+    "locations": "location_id"
+}
 
 def get_database_url():
     if not DATABASE_URL:
@@ -68,3 +73,22 @@ def execute_query(query: str, values: tuple = ()):
         raise RuntimeError(result["error"]["message"])
 
     return result["response"]["result"]
+
+def get_db_value(table, column, row_id):
+    # Get the ID column based on the table
+    id_column = TABLE_ID_COLUMNS.get(table)
+
+    if id_column is None:
+        raise ValueError(f"Invalid table: {table}")
+
+    # Build query
+    query = f"SELECT {column} FROM {table} WHERE {id_column} = ?"
+
+    # Execute query
+    result = execute_query(query, (row_id,))
+
+    # Return value or None if not found
+    if not result:
+        return None
+
+    return result[0][0]

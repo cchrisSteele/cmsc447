@@ -28,9 +28,7 @@ def create_account(username: str, email: str, password: str):
         }
 
     # Check if username already exists
-    existing_username = get_db_value(
-        "admins", "admin_id", "username", username
-    )
+    existing_username = get_db_value( "admins", "admin_id", "username", username)
 
     if existing_username is not None:
         return {
