@@ -10,14 +10,14 @@ function NavBar() {
       </div>
 
       <nav className="navbar-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#map">Explore Map</a>
-        <a href="#about">About</a>
+        <a href="/#home">Home</a>
+        <a href="/#map">Explore Map</a>
+        <a href="/#about">About</a>
       </nav>
 
-      <button className="navbar-login" type="button" disabled>
+      <a href="/facilities/login" className="navbar-login">
         Facilities Login
-      </button>
+      </a>
     </header>
   );
 }
