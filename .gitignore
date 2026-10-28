@@ -30,3 +30,4 @@ dist-ssr
 
 #Root Dir Files
 .env
+*/__pycache__
