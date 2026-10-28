@@ -3,76 +3,130 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  padding: 18px 32px;
+  gap: 24px;
+  padding: 16px 40px;
   background-color: #ffffff;
   border-bottom: 3px solid #f5b800;
   font-family: Arial, sans-serif;
 }
 
+/* UMBC Branding */
+
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .navbar-logo {
   font-size: 26px;
   font-weight: 800;
   color: #111111;
+  letter-spacing: -0.5px;
 }
 
 .navbar-title {
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 400;
   color: #555555;
   border-left: 2px solid #f5b800;
   padding-left: 12px;
 }
 
+/* Navigation Container */
+
 .navbar-links {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
 }
 
 .navbar-links a {
-  color: #111111;
-  font-size: 15px;
-  font-weight: 600;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 4px;
+  color: #555555;
+  font-size: 16px;
+  font-weight: 500;
   text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  box-shadow: none;
+  transition: color 0.2s ease;
 }
 
 .navbar-links a:hover {
-  color: #b58a00;
+  color: #111111;
+  background: transparent;
 }
 
-.navbar-login {
-  background-color: #f5b800;
+/* Gold Active Underline */
+
+.navbar-links a:first-child {
   color: #111111;
-  padding: 11px 18px;
+  font-weight: 600;
+  background: transparent;
+  box-shadow: none;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #f5b800;
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+
+.navbar-links a:first-child::after,
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-links a:focus-visible {
+  outline: 2px solid #b58a00;
+  outline-offset: 4px;
+}
+
+/* Facilities Login */
+
+.navbar-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+
+  background-color: #171717;
+  color: #f5b800;
+
   border: none;
-  border-radius: 6px;
-  font-weight: 700;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  transition: background-color 0.2s ease;
+}
+
+.navbar-login:not(:disabled):hover {
+  background-color: #333333;
+  cursor: pointer;
 }
 
 .navbar-login:disabled {
-  opacity: 0.65;
+  opacity: 1;
   cursor: not-allowed;
-}
-
-@media (max-width: 700px) {
-  .navbar {
-    flex-wrap: wrap;
-    padding: 16px;
-  }
-
-  .navbar-links {
-    order: 3;
-    width: 100%;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  .navbar-title {
-    font-size: 15px;
-  }
 }
