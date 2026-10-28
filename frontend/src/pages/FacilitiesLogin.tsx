@@ -1,12 +1,13 @@
 
 import { useState } from "react";
+import umbcLogo from "../assets/UMBCretrievers_LOGO.jpg";
 import "./FacilitiesLogin.css";
 
 function FacilitiesLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e: React.SubmitEvent<HTMLFormElement>) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Backend authentication will be added later
@@ -17,8 +18,11 @@ function FacilitiesLogin() {
     <div className="login-page">
       <div className="login-card">
         <div className="login-header">
-          <h1>UMBC</h1>
-          <div className="login-divider"></div>
+          <img
+            src={umbcLogo}
+            alt="UMBC Retrievers Logo"
+            className="login-logo"
+          />
 
           <h2>Facilities Login</h2>
           <p>UMBC Facilities Management Portal</p>

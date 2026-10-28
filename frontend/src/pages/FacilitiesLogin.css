@@ -1,4 +1,6 @@
 
+/* Login Page */
+
 .login-page {
   min-height: 100vh;
   display: flex;
@@ -7,6 +9,8 @@
   padding: 24px;
   background-color: #f6ce63;
 }
+
+/* Login Card */
 
 .login-card {
   width: 100%;
@@ -24,41 +28,39 @@
   margin-bottom: 32px;
 }
 
-.login-header h1 {
-  font-size: 42px;
-  font-weight: 800;
-  color: #111111;
-  margin: 0;
-  letter-spacing: -1px;
-}
+/* UMBC Retrievers Logo */
 
-.login-divider {
-  width: 50px;
-  height: 4px;
-  background-color: #f5b800;
-  margin: 12px auto 24px;
-  border-radius: 4px;
+.login-logo {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 24px;
 }
 
 .login-header h2 {
   font-size: 26px;
   font-weight: 700;
   color: #111111;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
 }
 
 .login-header p {
   font-size: 14px;
   color: #777777;
+  margin: 0;
 }
 
-/* Form */
+/* Login Form */
 
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 22px;
 }
+
+/* Username and Password Fields */
 
 .login-field {
   display: flex;
@@ -77,14 +79,21 @@
   padding: 13px 14px;
   border: 1px solid #dddddd;
   border-radius: 8px;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #111111;
   font-size: 15px;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
 .login-field input:focus {
-  outline: 2px solid #f5b800;
+  outline: none;
   border-color: #f5b800;
+  box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.2);
+}
+
+.login-field input::placeholder {
+  color: #999999;
 }
 
 /* Login Button */
@@ -99,29 +108,62 @@
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+  transition: background-color 0.2s ease,
+              transform 0.2s ease;
 }
 
 .login-submit:hover {
   background-color: #e0a800;
 }
 
-/* just footer */
-
-.login-footer {
-  margin-top: 28px;
-  font-size: 12px;
-  text-align: center;
-  color: #999999;
+.login-submit:active {
+  transform: scale(0.99);
 }
 
-/* for mobile */
+.login-submit:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 3px;
+}
+
+/* Footer */
+
+.login-footer {
+  margin: 28px 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: #888888;
+}
+
+/* Mobile */
 
 @media (max-width: 480px) {
-  .login-card {
-    padding: 32px 24px;
+  .login-page {
+    padding: 16px;
   }
 
-  .login-header h1 {
-    font-size: 36px;
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 12px;
+  }
+
+  .login-logo {
+    width: 140px;
+    margin-bottom: 20px;
+  }
+
+  .login-header {
+    margin-bottom: 28px;
+  }
+
+  .login-header h2 {
+    font-size: 23px;
+  }
+
+  .login-header p {
+    font-size: 13px;
+  }
+
+  .login-form {
+    gap: 18px;
   }
 }
