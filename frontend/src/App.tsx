@@ -1,5 +1,5 @@
-
 import Navbar from "./components/NavBar";
+import MapLayout from "./components/MapLayout";
 import "./App.css";
 
 function App() {
@@ -7,12 +7,8 @@ function App() {
     <div className="app">
       <Navbar />
 
-      <main id="home" className="app-content">
-        <h1>Welcome to UMBC Campus Map</h1>
-        <p>
-          Explore campus buildings, directions, parking,
-          and accessibility features.
-        </p>
+      <main>
+        <MapLayout />
       </main>
     </div>
   );

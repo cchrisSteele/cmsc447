@@ -1,0 +1,137 @@
+.map-layout {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 83px);
+  background-color: #ffffff;
+}
+
+/* Sidebar */
+
+.map-sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  padding: 28px;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  color: #111111;
+}
+
+.sidebar-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.sidebar-header p {
+  font-size: 14px;
+  color: #777777;
+  margin: 0 0 30px;
+}
+
+/* Search */
+
+.search-section {
+  margin-bottom: 32px;
+}
+
+.search-section label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.search-section input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 14px;
+}
+
+.search-section input:focus {
+  outline: 2px solid #f5b800;
+  border-color: #f5b800;
+}
+
+/* Map Layers */
+
+.layers-section {
+  border-top: 1px solid #eeeeee;
+  padding-top: 24px;
+}
+
+.layers-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.layer-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #444444;
+  font-size: 14px;
+}
+
+.layer-option input {
+  width: 17px;
+  height: 17px;
+  accent-color: #f5b800;
+}
+
+/* Map Area */
+
+.map-container {
+  flex: 1;
+  min-width: 0;
+  min-height: 500px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder {
+  text-align: center;
+  padding: 30px;
+  color: #333333;
+}
+
+.map-icon {
+  font-size: 54px;
+  color: #b58a00;
+  margin-bottom: 16px;
+}
+
+.map-placeholder h2 {
+  font-size: 26px;
+  margin: 0 0 12px;
+}
+
+.map-placeholder p {
+  font-size: 15px;
+  color: #777777;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 768px) {
+  .map-layout {
+    flex-direction: column;
+  }
+
+  .map-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .map-container {
+    min-height: 450px;
+  }
+}
