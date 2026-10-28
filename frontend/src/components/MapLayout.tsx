@@ -1,4 +1,5 @@
 
+import ArcGISMap from "./ArcGISMap";
 import "./MapLayout.css";
 
 function MapLayout() {
@@ -41,11 +42,7 @@ function MapLayout() {
       </aside>
 
       <div className="map-container">
-        <div className="map-placeholder">
-          <div className="map-icon">⌖</div>
-          <h2>UMBC Campus Map</h2>
-          <p>Interactive ArcGIS map coming soon.</p>
-        </div>
+        <ArcGISMap />
       </div>
     </section>
   );
