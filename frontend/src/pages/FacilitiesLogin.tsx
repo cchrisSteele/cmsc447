@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import type { FormEvent } from "react";
 import umbcLogo from "../assets/UMBCretrievers_LOGO.jpg";
 import "./FacilitiesLogin.css";
 
@@ -7,11 +8,12 @@ function FacilitiesLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Temporary demo login
     // Backend authentication will be added later
-    alert("Login functionality coming soon!");
+    window.location.href = "/facilities/dashboard";
   };
 
   return (

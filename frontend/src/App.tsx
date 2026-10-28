@@ -2,19 +2,27 @@
 import Navbar from "./components/NavBar";
 import MapLayout from "./components/MapLayout";
 import FacilitiesLogin from "./pages/FacilitiesLogin";
+import FacilitiesDashboard from "./pages/FacilitiesDashboard";
 import "./App.css";
 
 function App() {
-  const isLoginPage =
-    window.location.pathname === "/facilities/login";
+  const path = window.location.pathname;
 
-  if (isLoginPage) {
+  // Facilities Login Page
+  if (path === "/facilities/login") {
     return <FacilitiesLogin />;
   }
 
+  // Facilities Private Dashboard
+  if (path === "/facilities/dashboard") {
+    return <FacilitiesDashboard />;
+  }
+
+  // Public Campus Map
   return (
     <div className="app">
       <Navbar />
+
       <main>
         <MapLayout />
       </main>

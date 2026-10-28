@@ -1,0 +1,231 @@
+
+.facilities-dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #111111;
+}
+
+/* Header */
+
+.facilities-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 32px;
+  background: #171717;
+  color: #ffffff;
+  border-bottom: 3px solid #f5b800;
+}
+
+.facilities-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.facilities-brand strong {
+  color: #f5b800;
+  font-size: 24px;
+}
+
+.facilities-brand span {
+  padding-left: 14px;
+  border-left: 2px solid #f5b800;
+  font-size: 16px;
+}
+
+.facilities-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.facilities-demo {
+  font-size: 12px;
+  color: #f5b800;
+}
+
+.facilities-exit {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.facilities-exit:hover {
+  color: #f5b800;
+}
+
+/* Main Layout */
+
+.facilities-body {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 83px);
+}
+
+.facilities-sidebar {
+  width: 330px;
+  flex-shrink: 0;
+  padding: 28px;
+  background: #ffffff;
+  border-right: 1px solid #dddddd;
+  overflow-y: auto;
+}
+
+.facilities-sidebar h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+.facilities-sidebar > p {
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+/* Sidebar Sections */
+
+.facilities-section {
+  border-top: 1px solid #eeeeee;
+  padding: 24px 0;
+}
+
+.facilities-section h3 {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.facility-layer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.facility-layer input {
+  width: 17px;
+  height: 17px;
+  accent-color: #f5b800;
+}
+
+.facilities-helper {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #888888;
+}
+
+/* Report Issue */
+
+.facility-primary-button {
+  width: 100%;
+  padding: 13px;
+  background: #f5b800;
+  color: #111111;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.facility-primary-button:hover {
+  background: #e0a800;
+}
+
+.facility-report {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.facility-report label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.facility-report input,
+.facility-report select,
+.facility-report textarea {
+  width: 100%;
+  padding: 11px;
+  background: white;
+  color: #111111;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 13px;
+}
+
+/* Map */
+
+.facilities-map-container {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 500px;
+}
+
+.facilities-map-container arcgis-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.facilities-map-label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111111;
+  pointer-events: none;
+}
+
+.facilities-map-label span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #777777;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .facilities-header {
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+
+  .facilities-brand span {
+    font-size: 13px;
+  }
+
+  .facilities-body {
+    flex-direction: column;
+  }
+
+  .facilities-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .facilities-map-container {
+    min-height: 500px;
+  }
+}
