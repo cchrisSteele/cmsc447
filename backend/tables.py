@@ -1,4 +1,6 @@
 from database import execute_query 
+from dataclasses import dataclass
+
 
 
 ADMIN_SCHEMA = f"""
@@ -22,6 +24,26 @@ CREATE TABLE IF NOT EXISTS locations (
     FOREIGN KEY (admin_id) REFERENCES admins(admin_id)
 );
 """
+
+@dataclass
+class Admin:
+    admin_id: str
+    username: str
+    email: str
+    password_hash: str
+
+
+@dataclass
+class Location:
+    location_id: str
+    name: str
+    description: str
+    latitude: float
+    longitude: float
+    location_type: str
+    admin_id: str
+
+
 
 def create_tables():
     """Create the necessary tables in the database."""
